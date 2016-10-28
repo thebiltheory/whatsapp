@@ -2,8 +2,8 @@ import Moment from 'moment';
 import { Meteor } from 'meteor/meteor';
 import { Chats, Messages } from '../lib/collections';
 
-Meteor.startup(function(){
-  if ( Chats.find().count() !== 0 ) return;
+Meteor.startup(function() {
+  if (Chats.find().count() !== 0) return;
 
   Messages.remove({});
 
@@ -63,5 +63,4 @@ Meteor.startup(function(){
     const chatId = Chats.insert(chat);
     Messages.update(message._id, { $set: { chatId } });
   });
-
 });

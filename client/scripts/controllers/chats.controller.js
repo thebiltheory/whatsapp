@@ -10,12 +10,11 @@ export default class ChatsCtrl extends Controller {
         return Chats.find();
       }
     });
-
   }
 
   remove(chat) {
     Chats.remove(chat._id);
-    }
+  }
 }
 
 ChatsCtrl.$name = 'ChatsCtrl';
